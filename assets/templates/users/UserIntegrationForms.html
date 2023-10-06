@@ -1,0 +1,129 @@
+{%extends 'users/userbase.html'%}
+{%load static%}
+
+{%block contents%}
+
+  <div class="content">
+    <div class="content_resize">
+      <div class="mainbar">
+        <div class="article">
+          <h2><span>Add Integration Layer </span> Informations</h2>
+          <div class="clr"></div>
+
+          <div class="post_content">
+            <p>
+                          <form action="{%url 'UserIntegrationLayer'%}" method="POST" class="comment_form" style="width:100%">
+
+                    {% csrf_token %}
+                    <table>
+                        <tr>
+                            <td>Engineering Tool</td>
+                            <td>{{form.engtool}}</td>
+                        </tr>
+                        <tr>
+                            <td>File Size</td>
+                            <td>{{form.filesize}}</td>
+                        </tr>
+                        <tr>
+                            <td>Database Name</td>
+                            <td>{{form.databasetype}}</td>
+                        </tr>
+                        <tr>
+                            <td>Number of Camera active (HMI)</td>
+                            <td>{{form.humanmachineinterface}}</td>
+                        </tr>
+                        <tr>
+                            <td>No Of PLC Slaves</td>
+                            <td>{{form.plcslaves}}</td>
+                        </tr>
+
+<tr><td></td>
+     <td><button type="submit" class="btn btn-primary js-scroll-trigger">Add Data</button></td>
+                        </tr>
+
+
+                        {% if messages %}
+                        {% for message in messages %}
+                        <font color='GREEN'> {{ message }}</font>
+                        {% endfor %}
+                        {% endif %}
+
+                    </table>
+
+                </form>
+            </p>
+
+
+          </div>
+          <div class="clr"></div>
+        </div>
+       <div class="article">
+          <h2><span>View All Integrations</span> Industrial Environment</h2>
+          <div class="clr"></div>
+          <div class="post_content">
+            <p>
+                <strong>
+                     <table border="2px" class="table table-hover table-dark">
+                    <thead>
+                    <tr class="table-danger">
+                        <th scope="col">S.No</th>
+                        <th scope="col">Tools</th>
+                        <th scope="col">File Size</th>
+                        <th scope="col">Database Name</th>
+                        <th scope="col">HMI</th>
+                        <th scope="col">PLC</th>
+                        <th scope="col">Date</th>
+
+                    </tr>
+                    </thead>
+                    <tbody>
+                    {% for i in data %}
+                    <tr scope="row" style="color: BLUE; background-color:#FFFCBB">
+                        <td>{{forloop.counter}}</td>
+                        <td>{{i.engtool}}</td>
+                        <td>{{i.filesize}}</td>
+                        <td>{{i.databasetype}}</td>
+                        <td>{{i.humanmachineinterface}}</td>
+                        <td>{{i.plcslaves}}</td>
+                        <td>{{i.cdate}}</td>
+
+
+
+                    {% endfor %}
+
+
+                    </tbody>
+                </table>
+                </strong>
+            </p>
+
+          </div>
+          <div class="clr"></div>
+        </div>
+
+      </div>
+      <div class="sidebar">
+
+        <div class="gadget">
+          <h2 class="star"><span>Layer</span></h2>
+          <div class="clr"></div>
+          <ul class="ex_menu">
+            <li><a href="{%url 'UserAssetLayer'%}">Asset Layer</a><br />
+              Products and engineering systems</li>
+            <li><a href="{%url 'UserIntegrationLayer'%}">Integration Layer</a><br />
+              Physical to the Virtual World Happens</li>
+            <li><a href="{%url 'UserCommunicationLayer'%}">Communication Layer</a><br />
+              Communication Between the Integration and Information</li>
+            <li><a href="{%url 'UserInformationLayer'%}">Information Layer</a><br />
+              Data is Described by means of Semantics and Becomes Information</li>
+            <li><a href="{%url 'UserFunctionalLayer'%}">Functional Layer</a><br />
+              Analysis and Visualization</li>
+            <li><a href="{%url 'UserBusinesslayer'%}">Business Layer</a><br />
+              Business Requirements, use Case Description</li>
+          </ul>
+        </div>
+      </div>
+      <div class="clr"></div>
+    </div>
+  </div>
+{%endblock%}

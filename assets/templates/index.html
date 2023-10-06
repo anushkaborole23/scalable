@@ -1,0 +1,13 @@
+{%extends 'base.html'%}
+{%load static%}
+
+
+{%block contents%}
+ <div class="slider">
+        <div id="coin-slider"> <a href="#"><img src="{%static 'images/slide1.jpg'%}" width="960" height="360" alt="" /><span><big>Data ingestion frameworks.</big><br />
+          Data ingestion frameworks deal with transferring raw data from data sources to the big data system and handle format and integration issues (e.g. Kafka, Flume, Sqoop, etc.).</span></a> <a href="#"><img src="{%static 'images/slide2.jpg'%}" width="960" height="360" alt="" /><span><big>Data Storage frameworks.</big><br />
+          Data Storage frameworks include distributed file systems and databases that persistently store varieties of big data formats..</span></a> <a href="#"><img src="{%static 'images/slide3.jpg'%}" width="960" height="360" alt="" /><span><big>Computation Frameworks.</big><br />
+          Computation frameworks can process large datasets in parallel where the processing itself can be distributed across a cluster of commodity machines.</span></a> </div>
+        <div class="clr"></div>
+      </div>
+{%endblock%}

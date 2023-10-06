@@ -1,0 +1,40 @@
+{%extends 'base.html'%}
+{%load static%}
+
+
+{%block contents%}
+  <div class="content">
+    <div class="content_resize">
+      <div class="mainbar">
+        <div class="article">
+          <h2><span>Admin Login Form</span></h2>
+          <div class="clr"></div>
+
+        </div>
+        <div class="article">
+
+          <div class="clr"></div>
+           <form class="form-inline d-flex" method="post" action="{%url 'AdminLoginCheck'%}">
+                {%csrf_token%}
+            <ol>
+              <li>
+                <label for="name">Name (required)</label>
+                <input type="text" id="name" name="loginid" class="text" required />
+              </li>
+                 <div class="clr"></div>
+                <li>
+                <label for="password">Password (required)</label>
+                <input type="password" id="name" name="pswd" class="text" required/>
+              </li>
+                 <div class="clr"></div><br/>
+
+                <input type="image" name="imageField" id="imageField" src="{%static 'images/submit.gif'%}" class="Login" />
+                <div class="clr"></div>
+              </li>
+            </ol>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+{%endblock%}

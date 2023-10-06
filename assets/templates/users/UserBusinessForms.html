@@ -1,0 +1,115 @@
+{%extends 'users/userbase.html'%}
+{%load static%}
+
+{%block contents%}
+
+  <div class="content">
+    <div class="content_resize">
+      <div class="mainbar">
+        <div class="article">
+          <h2><span>Add User Business Layer </span> Informations</h2>
+          <div class="clr"></div>
+
+          <div class="post_content">
+            <p>
+                          <form action="{%url 'UserBusinesslayer'%}" method="POST" class="comment_form" style="width:100%">
+
+                    {% csrf_token %}
+                    <table>
+                        <tr>
+                            <td>Enter Anomaly Name</td>
+                            <td>{{form.anomalyname}}</td>
+                        </tr>
+                        <tr>
+                            <td>Energy Compution value</td>
+                            <td>{{form.energyoptimization}}</td>
+                        </tr>
+                        <tr>
+                            <td>Monitoring</td>
+                            <td>{{form.conditionmonitor}}</td>
+                        </tr>
+
+
+<tr><td></td>
+     <td><button type="submit" class="btn btn-primary js-scroll-trigger">Add Data</button></td>
+                        </tr>
+
+
+                        {% if messages %}
+                        {% for message in messages %}
+                        <font color='GREEN'> {{ message }}</font>
+                        {% endfor %}
+                        {% endif %}
+
+                    </table>
+
+                </form>
+            </p>
+
+
+          </div>
+          <div class="clr"></div>
+        </div>
+       <div class="article">
+          <h2><span>View All Functional</span> Industrial Environment</h2>
+          <div class="clr"></div>
+          <div class="post_content">
+            <p>
+                <strong>
+                     <table border="2px" class="table table-hover table-dark">
+                    <thead>
+                    <tr class="table-danger">
+                        <th scope="col">S.No</th>
+                        <th scope="col">Anomaly Name</th>
+                        <th scope="col">Energy Compution</th>
+                        <th scope="col">Condition Monitor</th>
+                        <th scope="col">Date</th>
+
+                    </tr>
+                    </thead>
+                    <tbody>
+                    {% for i in data %}
+                    <tr scope="row" style="color: BLUE; background-color:#FFFCBB">
+                        <td>{{forloop.counter}}</td>
+                        <td>{{i.anomalyname}}</td>
+                        <td>{{i.energyoptimization}}</td>
+                        <td>{{i.conditionmonitor}}</td>
+                        <td>{{i.cdate}}</td>
+                    {% endfor %}
+
+
+                    </tbody>
+                </table>
+                </strong>
+            </p>
+
+          </div>
+          <div class="clr"></div>
+        </div>
+
+      </div>
+      <div class="sidebar">
+
+        <div class="gadget">
+          <h2 class="star"><span>Layer</span></h2>
+          <div class="clr"></div>
+          <ul class="ex_menu">
+            <li><a href="{%url 'UserAssetLayer'%}">Asset Layer</a><br />
+              Products and engineering systems</li>
+            <li><a href="{%url 'UserIntegrationLayer'%}">Integration Layer</a><br />
+              Physical to the Virtual World Happens</li>
+            <li><a href="{%url 'UserCommunicationLayer'%}">Communication Layer</a><br />
+              Communication Between the Integration and Information</li>
+            <li><a href="{%url 'UserInformationLayer'%}">Information Layer</a><br />
+              Data is Described by means of Semantics and Becomes Information</li>
+            <li><a href="{%url 'UserFunctionalLayer'%}">Functional Layer</a><br />
+              Analysis and Visualization</li>
+            <li><a href="{%url 'UserBusinesslayer'%}">Business Layer</a><br />
+              Business Requirements, use Case Description</li>
+          </ul>
+        </div>
+      </div>
+      <div class="clr"></div>
+    </div>
+  </div>
+{%endblock%}

@@ -1,0 +1,45 @@
+
+{%extends 'users/userbase.html'%}
+{%load static%}
+
+{%block contents%}
+
+  <div class="content">
+    <div class="content_resize">
+      <div class="mainbar">
+        <div class="article">
+          <h2><span>PCA Solutions</span> For Your Business</h2>
+          <div class="clr"></div>
+          {{data|safe}}
+          <div class="post_content">
+
+          </div>
+          <div class="clr"></div>
+        </div>
+
+      </div>
+     <!-- <div class="sidebar">
+
+        <div class="gadget">
+          <h2 class="star"><span>Layer</span></h2>
+          <div class="clr"></div>
+          <ul class="ex_menu">
+            <li><a href="{%url 'UserAssetLayer'%}">Asset Layer</a><br />
+              Products and engineering systems</li>
+            <li><a href="{%url 'UserIntegrationLayer'%}">Integration Layer</a><br />
+              Physical to the Virtual World Happens</li>
+            <li><a href="{%url 'UserCommunicationLayer'%}">Communication Layer</a><br />
+              Communication Between the Integration and Information</li>
+            <li><a href="{%url 'UserInformationLayer'%}">Information Layer</a><br />
+              Data is Described by means of Semantics and Becomes Information</li>
+            <li><a href="{%url 'UserFunctionalLayer'%}">Functional Layer</a><br />
+              Analysis and Visualization</li>
+            <li><a href="{%url 'UserBusinesslayer'%}">Business Layer</a><br />
+              Business Requirements, use Case Description</li>
+          </ul>
+        </div>
+      </div>-->
+      <div class="clr"></div>
+    </div>
+  </div>
+{%endblock%}

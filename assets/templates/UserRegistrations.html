@@ -1,0 +1,79 @@
+{%extends 'base.html'%}
+{%load static%}
+
+
+{%block contents%}
+ <div class="content">
+    <div class="content_resize">
+      <div class="mainbar">
+        <div class="article">
+          <h2><span>User Register Form</span></h2>
+          <div class="clr"></div>
+          <p>An important step on this path is to have a standard and resilient architecture that integrates big data and machine learning technologies for efficient industrial data analytics.</p>
+        </div>
+        <div class="article">
+          <h2><span>Form</span> Fill up</h2>
+          <div class="clr"></div>
+          <form action="{%url 'UserRegisterActions'%}" method="POST" class="comment_form" style="width:100%">
+
+                    {% csrf_token %}
+                    <table>
+                        <tr>
+                            <td>User Name</td>
+                            <td>{{form.name}}</td>
+                        </tr>
+                        <tr>
+                            <td>Login ID</td>
+                            <td>{{form.loginid}}</td>
+                        </tr>
+                        <tr>
+                            <td>Password</td>
+                            <td>{{form.password}}</td>
+                        </tr>
+                        <tr>
+                            <td>Mobile</td>
+                            <td>{{form.mobile}}</td>
+                        </tr>
+                        <tr>
+                            <td>email</td>
+                            <td>{{form.email}}</td>
+                        </tr>
+                        <tr>
+                            <td>Locality</td>
+                            <td>{{form.locality}}</td>
+                        </tr>
+                        <tr>
+                            <td>Address</td>
+                            <td>{{form.address}}</td>
+                        </tr>
+                        <tr>
+                            <td>City</td>
+                            <td>{{form.city}}</td>
+                        </tr>
+                        <tr>
+                            <td>State</td>
+                            <td>{{form.state}}</td>
+                        </tr>
+                        <tr>
+
+                            <td>{{form.status}}</td>
+                        </tr>
+<tr><td></td>
+     <td><button type="submit" class="btn btn-primary js-scroll-trigger">Register</button></td>
+                        </tr>
+
+
+                        {% if messages %}
+                        {% for message in messages %}
+                        <font color='GREEN'> {{ message }}</font>
+                        {% endfor %}
+                        {% endif %}
+
+                    </table>
+
+                </form>
+        </div>
+      </div>
+    </div>
+ </div>
+{%endblock%}

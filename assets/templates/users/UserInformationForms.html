@@ -1,0 +1,121 @@
+{%extends 'users/userbase.html'%}
+{%load static%}
+
+{%block contents%}
+
+  <div class="content">
+    <div class="content_resize">
+      <div class="mainbar">
+        <div class="article">
+          <h2><span>Add UserCommunication Layer </span> Informations</h2>
+          <div class="clr"></div>
+
+          <div class="post_content">
+            <p>
+                          <form action="{%url 'UserInformationLayer'%}" method="POST" class="comment_form" style="width:100%">
+
+                    {% csrf_token %}
+                    <table>
+                        <tr>
+                            <td>Metadata Information</td>
+                            <td>{{form.metadata}}</td>
+                        </tr>
+                        <tr>
+                            <td>Storage Systems</td>
+                            <td>{{form.storagesystems}}</td>
+                        </tr>
+                        <tr>
+                            <td>Schema Registry</td>
+                            <td>{{form.schemaregistry}}</td>
+                        </tr>
+                        <tr>
+                            <td>Data Access</td>
+                            <td>{{form.da}}</td>
+                        </tr>
+
+
+<tr><td></td>
+     <td><button type="submit" class="btn btn-primary js-scroll-trigger">Add Data</button></td>
+                        </tr>
+
+
+                        {% if messages %}
+                        {% for message in messages %}
+                        <font color='GREEN'> {{ message }}</font>
+                        {% endfor %}
+                        {% endif %}
+
+                    </table>
+
+                </form>
+            </p>
+
+
+          </div>
+          <div class="clr"></div>
+        </div>
+       <div class="article">
+          <h2><span>View All Information Infomrations</span> Industrial Environment</h2>
+          <div class="clr"></div>
+          <div class="post_content">
+            <p>
+                <strong>
+                     <table border="2px" class="table table-hover table-dark">
+                    <thead>
+                    <tr class="table-danger">
+                        <th scope="col">S.No</th>
+                        <th scope="col">Metadata</th>
+                        <th scope="col">Storage System</th>
+                        <th scope="col">Schema Registery</th>
+                        <th scope="col">Data Access</th>
+                        <th scope="col">Date</th>
+
+                    </tr>
+                    </thead>
+                    <tbody>
+                    {% for i in data %}
+                    <tr scope="row" style="color: BLUE; background-color:#FFFCBB">
+                        <td>{{forloop.counter}}</td>
+                        <td>{{i.metadata}}</td>
+                        <td>{{i.storagesystems}}</td>
+                        <td>{{i.schemaregistry}}</td>
+                        <td>{{i.da}}</td>
+                        <td>{{i.cdate}}</td>
+                    {% endfor %}
+
+
+                    </tbody>
+                </table>
+                </strong>
+            </p>
+
+          </div>
+          <div class="clr"></div>
+        </div>
+
+      </div>
+      <div class="sidebar">
+
+        <div class="gadget">
+          <h2 class="star"><span>Layer</span></h2>
+          <div class="clr"></div>
+          <ul class="ex_menu">
+            <li><a href="{%url 'UserAssetLayer'%}">Asset Layer</a><br />
+              Products and engineering systems</li>
+            <li><a href="{%url 'UserIntegrationLayer'%}">Integration Layer</a><br />
+              Physical to the Virtual World Happens</li>
+            <li><a href="{%url 'UserCommunicationLayer'%}">Communication Layer</a><br />
+              Communication Between the Integration and Information</li>
+            <li><a href="{%url 'UserInformationLayer'%}">Information Layer</a><br />
+              Data is Described by means of Semantics and Becomes Information</li>
+            <li><a href="{%url 'UserFunctionalLayer'%}">Functional Layer</a><br />
+              Analysis and Visualization</li>
+            <li><a href="{%url 'UserBusinesslayer'%}">Business Layer</a><br />
+              Business Requirements, use Case Description</li>
+          </ul>
+        </div>
+      </div>
+      <div class="clr"></div>
+    </div>
+  </div>
+{%endblock%}

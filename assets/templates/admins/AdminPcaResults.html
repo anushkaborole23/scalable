@@ -1,0 +1,67 @@
+{%extends 'admins/adminbase.html'%}
+{%load static%}
+{%block contents%}
+<div class="content">
+    <div class="content_resize">
+      <div class="mainbar">
+        <div class="article">
+          <h2><span>Excellent Solution PCA Results</span> For Your Business</h2>
+          <div class="clr"></div>
+          <div class="img"><img src="{%static 'images/img1.jpg'%}" width="178" height="227" alt="" class="fl" /></div>
+          <div class="post_content">
+
+             <p>Percentage of variance explained by each of the selected components = <strong>{{variance}}</strong></p><br/>
+              <p>lower-dimensional space = <strong>{{singular}}</strong></p>
+
+          </div>
+          <div class="clr"></div>
+        </div>
+        <div class="article">
+          <h2><span>Use Case: PCA in Industrial Environment</span> Industrial Environment</h2>
+            <p>{{data|safe}}</p>
+          <div class="clr"></div>
+
+          <div class="post_content">
+
+
+
+          </div>
+          <div class="clr"></div>
+        </div>
+
+      </div>
+      <div class="sidebar">
+        <div class="gadget">
+          <h2 class="star"><span>REQUIREMENTS FOR </span> DESIGNING</h2>
+          <div class="clr"></div>
+          <ul class="sb_menu">
+            <li><a href="#">Data integration</a></li>
+            <li><a href="#">Support of different velocities</a></li>
+            <li><a href="#">Scalability and reliability</a></li>
+            <li><a href="#">Layered architecture</a></li>
+            <li><a href="#">Data security</a></li>
+          </ul>
+        </div>
+        <div class="gadget">
+          <h2 class="star"><span>Layer</span></h2>
+          <div class="clr"></div>
+          <ul class="ex_menu">
+            <li><a href="#">Asset Layer</a><br />
+              Products and engineering systems</li>
+            <li><a href="#">Integration Layer</a><br />
+              Physical to the Virtual World Happens</li>
+            <li><a href="#">Communication Layer</a><br />
+              Communication Between the Integration and Information</li>
+            <li><a href="#">Information Layer</a><br />
+              Data is Described by means of Semantics and Becomes Information</li>
+            <li><a href="#">Functional Layer</a><br />
+              Analysis and Visualization</li>
+            <li><a href="#">Business Layer</a><br />
+              Business Requirements, use Case Description</li>
+          </ul>
+        </div>
+      </div>
+      <div class="clr"></div>
+    </div>
+  </div>
+{%endblock%}

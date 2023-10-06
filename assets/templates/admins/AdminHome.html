@@ -1,0 +1,66 @@
+{%extends 'admins/adminbase.html'%}
+{%load static%}
+{%block contents%}
+<div class="content">
+    <div class="content_resize">
+      <div class="mainbar">
+        <div class="article">
+          <h2><span>Excellent Solution</span> For Your Business</h2>
+          <div class="clr"></div>
+          <div class="img"><img src="{%static 'images/img1.jpg'%}" width="178" height="227" alt="" class="fl" /></div>
+          <div class="post_content">
+            <p>Traditional ML algorithms encounter great difficulties in processing the huge amount of data generated in smart production  systems. This is due to the fact that they are designed under the assumption that datasets and model parameters must be entirely loaded into the memory. Scalable ML algorithms are a common way to tackle this issue, because they are well suited to handle large datasets and/or models with many parameters.</p>
+            <p><strong>Distributed ML algorithms represent the majority of state-ofthe-art scalable ML methods [18]. They can be partitioned into two groups of algorithms that use different parallelism methods: data parallel and model parallel. In the first group, the dataset is divided into smaller pieces, which are stored on nodes in a computer cluster. All parameters of the model will be partially updated concurrently on each node and combined afterward. Conversely, in the second group, the model parameters are divided into subsets and will be updated on each node simultaneously using the whole dataset. There are also some hybrid methods where the dataset, as well as the model parameters, are split and distributed over the cluster.</p>
+
+          </div>
+          <div class="clr"></div>
+        </div>
+        <div class="article">
+          <h2><span>Use Case: PCA in Industrial Environment</span> Industrial Environment</h2>
+
+          <div class="clr"></div>
+          <div class="img"><img src="{%static 'images/img2.jpg'%}" width="178" height="227" alt="" class="fl" /></div>
+          <div class="post_content">
+            <p>the benefits of the proposed big data architecture are shown for a concrete application case with respect to data analytics in industrial environments. Data analytics requires in many cases to learn system models from historic data and to use the learned models for the assessment or processing of current process data.</p>
+            <p><strong>An example for such models is the principal component analysis (PCA) matrix, which has versatile industrial applications such as dimensional reduction and condition monitoring approaches (see e.g. [32]–[34]). The PCA matrix is computed from historical measurement vectors xk recorded at time instances k = 1 : : : n using a singular value decomposition (SVD) of the covariance matrix.</p>
+
+          </div>
+          <div class="clr"></div>
+        </div>
+
+      </div>
+      <div class="sidebar">
+        <div class="gadget">
+          <h2 class="star"><span>REQUIREMENTS FOR </span> DESIGNING</h2>
+          <div class="clr"></div>
+          <ul class="sb_menu">
+            <li><a href="#">Data integration</a></li>
+            <li><a href="#">Support of different velocities</a></li>
+            <li><a href="#">Scalability and reliability</a></li>
+            <li><a href="#">Layered architecture</a></li>
+            <li><a href="#">Data security</a></li>
+          </ul>
+        </div>
+        <div class="gadget">
+          <h2 class="star"><span>Layer</span></h2>
+          <div class="clr"></div>
+          <ul class="ex_menu">
+            <li><a href="#">Asset Layer</a><br />
+              Products and engineering systems</li>
+            <li><a href="#">Integration Layer</a><br />
+              Physical to the Virtual World Happens</li>
+            <li><a href="#">Communication Layer</a><br />
+              Communication Between the Integration and Information</li>
+            <li><a href="#">Information Layer</a><br />
+              Data is Described by means of Semantics and Becomes Information</li>
+            <li><a href="#">Functional Layer</a><br />
+              Analysis and Visualization</li>
+            <li><a href="#">Business Layer</a><br />
+              Business Requirements, use Case Description</li>
+          </ul>
+        </div>
+      </div>
+      <div class="clr"></div>
+    </div>
+  </div>
+{%endblock%}
